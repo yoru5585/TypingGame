@@ -2,7 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerInfo_s : MonoBehaviour
+[CreateAssetMenu(menuName = "Player")]
+public class PlayerInfo_s : ScriptableObject
 {
-    public string playerName;
+    [Header("プレイヤー名")] public string playerName;
+    [Header("ガチャP")] public int gatyaPoint;
 }

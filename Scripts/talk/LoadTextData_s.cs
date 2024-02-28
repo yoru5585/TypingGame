@@ -22,8 +22,10 @@ public class LoadTextData_s : MonoBehaviour
 
         for (int i = 1; i < _csvData.Count; i++)
         {
-            Debug.Log(_csvData[i][0]);
-            Debug.Log(_csvData[i][1]);
+            foreach (string str in _csvData[i])
+            {
+                Debug.Log(str); //ƒeƒXƒg
+            }
         }
         Debug.Log("END_read");
     }
@@ -31,5 +33,10 @@ public class LoadTextData_s : MonoBehaviour
     public List<string[]> GetcsvData()
     {
         return _csvData;
+    }
+
+    public void ListClear()
+    {
+        _csvData.Clear();
     }
 }

@@ -8,6 +8,7 @@ public class StartManager_s : MonoBehaviour
 {
     [SerializeField] Button button;
     [SerializeField] TextMeshProUGUI playerName;
+    [SerializeField] PlayerInfo_s playerInfo;
     // Start is called before the first frame update
     void Start()
     {
@@ -17,7 +18,7 @@ public class StartManager_s : MonoBehaviour
         {
             button.onClick.AddListener(() => GetComponent<MoveScene_s>().OnSceneMoved("mainScene"));
             GetComponent<SaveManager_s>().Load();
-            playerName.text = GameObject.Find("PlayerData").GetComponent<PlayerInfo_s>().playerName;
+            playerName.text = playerInfo.playerName;
         }
         else
         {

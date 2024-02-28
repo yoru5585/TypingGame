@@ -7,14 +7,13 @@ public class SaveManager_s : MonoBehaviour
 {
     string filePath;
     SaveData_s save;
-    PlayerInfo_s playerInfo;
+    [SerializeField] PlayerInfo_s playerInfo;
 
     private void Awake()
     {
         filePath = Application.persistentDataPath + "/" + ".savedata.json";
         Debug.Log(filePath);
         save = new SaveData_s();
-        playerInfo = GameObject.Find("PlayerData").GetComponent<PlayerInfo_s>();
     }
 
     public void Load()
@@ -48,16 +47,19 @@ public class SaveManager_s : MonoBehaviour
     public void SetData()
     {
         save.playerName = playerInfo.playerName;
+        save.gatyaPoint = playerInfo.gatyaPoint;
     }
 
     public void GetData()
     {
         playerInfo.playerName = save.playerName;
+        playerInfo.gatyaPoint = save.gatyaPoint;
     }
 
     public void DeleteData()
     {
         File.Delete(filePath);
+        Debug.Log("デリートしました。");
     }
 
     public bool CheckFileExists()

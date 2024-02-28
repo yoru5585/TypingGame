@@ -7,4 +7,5 @@ using System;
 public class SaveData_s
 {
     public string playerName;
+    public int gatyaPoint;
 }
